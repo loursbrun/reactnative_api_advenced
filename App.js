@@ -6,12 +6,12 @@ import FilmItem from './Components/FilmItem'
 export default class App extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { films: [] }
+    this.state = { films: [] }   // On redéfinie le constructeur avec une propriété dans le state
     }
 
 
 _loadFilms() {
-    getFilmsFromApiWithSearchedText("star").then(data => this.setState({ films: data.results }))
+    getFilmsFromApiWithSearchedText("star").then(data => this.setState({ films: data.results }))      // Ici c'est la méthode API qui remplie le tableau de film
 }
 
   render() {
@@ -21,7 +21,7 @@ _loadFilms() {
          <FlatList style={{ flex: 1, width: 360}}
                     data={this.state.films}
                     keyExtractor={(item) => item.id.toString()}
-                    renderItem={({ item }) => <FilmItem film={item} />}
+                    renderItem={({ item }) => <FilmItem film={item} />}    // Ici on passe film comme proprieté du composant FilmItem
                 />
       </View>
     );

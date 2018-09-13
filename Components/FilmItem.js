@@ -5,7 +5,7 @@ import { StyleSheet, View, Text, Image } from 'react-native'
 
 class FilmItem extends React.Component {
   render() {
-    const film = this.props.film;
+    const film = this.props.film;   // ici concrée une constante de film pour récupérer la propriété envoyée par le parent
     return (
       <View style={styles.main_container}>
         <Image
